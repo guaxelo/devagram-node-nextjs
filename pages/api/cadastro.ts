@@ -23,7 +23,7 @@ const endpointCadastro =
             return res.status(400).json({erro: 'Senha invalida'})
         }
 
-        // validação de duplicidade de usuario
+        //validação de duplicidade de usuario
         const usuarioComMesmoEmail = await UsuarioModel.find({email : usuario.email})
         if(usuarioComMesmoEmail && usuarioComMesmoEmail.length > 0){
             return res.status(400).json({erro: 'Essa conta ja existe'})
@@ -34,8 +34,9 @@ const endpointCadastro =
         const usuarioASerSalvo = {
             nome : usuario.nome,
             email : usuario.email,
-            senha : usuario.senha
+            senha : usuario.senha,
         }
+
         await UsuarioModel.create(usuario)
         return res.status(200).json({msg: 'Usuario criado com sucesso!'})
     }
