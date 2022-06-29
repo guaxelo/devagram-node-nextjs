@@ -1,6 +1,6 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
 import { conectarMongoDB } from '../../middlewares/conectarMongoDB'
-import type {ResportaPadraoMsg} from '../../types/RespostaPadraoMsg'
+import type {RespostaPadraoMsg as RespostaPadraoMsg} from '../../types/RespostaPadraoMsg'
 import type {LoginResposta} from '../../types/LoginResposta'
 import md5 from 'md5'
 import { UsuarioModel } from '../../models/UsuarioModel'
@@ -9,7 +9,7 @@ import jwt from 'jsonwebtoken'
 
 const endpointLogin = async (
     req: NextApiRequest,
-    res: NextApiResponse<ResportaPadraoMsg | LoginResposta>
+    res: NextApiResponse<RespostaPadraoMsg | LoginResposta>
 ) => {
 
     const {MINHA_CHAVE_JWT} = process.env

@@ -1,5 +1,5 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
-import type {ResportaPadraoMsg} from '../../types/RespostaPadraoMsg'
+import type {RespostaPadraoMsg} from '../../types/RespostaPadraoMsg'
 import type {CadastroRequisicao} from '../../types/CadastroRequisicao'
 import {UsuarioModel} from '../../models/UsuarioModel'
 import {conectarMongoDB} from '../../middlewares/conectarMongoDB'
@@ -11,7 +11,7 @@ import { isModuleNamespaceObject } from 'util/types'
 
 const handler = nc()
     .use(upload.single('file'))
-    .post(async (req: NextApiRequest, res: NextApiResponse<ResportaPadraoMsg>) =>{
+    .post(async (req: NextApiRequest, res: NextApiResponse<RespostaPadraoMsg>) =>{
         try{
             const usuario = req.body as CadastroRequisicao
         
